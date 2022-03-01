@@ -48,7 +48,8 @@ def getThermoData(filepath, T):
     files = [ f for f in os.listdir( os.curdir+"/app/Data" ) ] #list comprehension version.
     print(files)
     sys.stdout.flush()
-    with open(filepath) as json_file:
+    file = os.curdir+"/app/Data/water.json"
+    with open(file) as json_file:
         tmp = json.load(json_file)
         data.update(tmp)
     return(getAllProps(data, T))
