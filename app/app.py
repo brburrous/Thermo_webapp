@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from .thermo import *
  
-app = Flask(__name__)
+app = Flask('app')
  
 @app.route('/')
 def index():
