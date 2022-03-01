@@ -40,7 +40,6 @@ def linearInterpolate(x1, x2, y1, y2, x):
 
 
 def getThermoData(substance, T):
-    return "Hello world"
     filename = "Data/"+substance+".json"
     url_for('static', filename) 
     filepath = "./Data/" + substance + ".json"
