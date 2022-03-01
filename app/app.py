@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
 @app.route('/data', methods = ['POST', 'GET'])
 def data():
-    url_for('static,' filename='style.css')
+    url_for('static', filename='style.css')
     if request.method == 'POST':
         material = request.form['material'].lower()
         Temp = int(request.form['Temp'])
