@@ -13,12 +13,12 @@ if __name__ == '__main__':
 
 @app.route('/data', methods = ['POST', 'GET'])
 def data():
-    url_for('static', filename='style.css')
     if request.method == 'POST':
         material = request.form['material'].lower()
         Temp = int(request.form['Temp'])
     else:
         material = request.args.get('material')
         Temp = int(request.args.get('Temp'))
-    data = getThermoData(material, Temp)
+    filepath = url_for('static', filename='Data/'+material.lower()+'.json')
+    data = getThermoData(filepath, Temp)
     return data 
