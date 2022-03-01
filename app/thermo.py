@@ -52,6 +52,7 @@ def getThermoData(filepath, T):
     with open(file) as json_file:
         tmp = json.load(json_file)
         data.update(tmp)
+    print(data)
     return(getAllProps(data, T))
 
 
