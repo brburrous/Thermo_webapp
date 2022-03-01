@@ -40,19 +40,12 @@ def linearInterpolate(x1, x2, y1, y2, x):
 
 
 
-def getThermoData(filepath, T):
+def getThermoData(material, T):
     data = {}
-    print (os.getcwd()) # python 3
-    print("This is the name of the program:", sys.argv[0])
-    print("Argument List:", str(sys.argv))
-    files = [ f for f in os.listdir( os.curdir+"/app/Data" ) ] #list comprehension version.
-    print(files)
-    sys.stdout.flush()
-    file = os.curdir+"/app/Data/water.json"
+    file = os.curdir+"/app/Data/"+material.lower()+".json"
     with open(file) as json_file:
         tmp = json.load(json_file)
         data.update(tmp)
-    print(data)
     return(getAllProps(data, T))
 
 
