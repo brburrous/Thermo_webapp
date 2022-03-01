@@ -44,8 +44,9 @@ def getThermoData(filepath, T):
     data = {}
     print (os.getcwd()) # python 3
     print("This is the name of the program:", sys.argv[0])
-  
     print("Argument List:", str(sys.argv))
+    files = [ f for f in os.listdir( os.curdir ) if os.path.isfile(f) ] #list comprehension version.
+    print(files)
     sys.stdout.flush()
     with open(filepath) as json_file:
         tmp = json.load(json_file)
