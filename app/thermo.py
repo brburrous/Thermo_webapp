@@ -41,7 +41,7 @@ def linearInterpolate(x1, x2, y1, y2, x):
 
 def getThermoData(filepath, T):
     data = {}
-    with open(filepath) as json_file:
+    with open('Data/water.json') as json_file:
         tmp = json.load(json_file)
         data.update(tmp)
     return(getAllProps(data, T))
