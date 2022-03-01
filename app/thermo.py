@@ -1,5 +1,5 @@
 import json
-
+from flask import url_for
 
 
 
@@ -41,12 +41,14 @@ def linearInterpolate(x1, x2, y1, y2, x):
 
 def getThermoData(substance, T):
     return "Hello world"
-    # filepath = "./Data/" + substance + ".json"
-    # data = {}
-    # with open(filepath) as json_file:
-    #     tmp = json.load(json_file)
-    #     data.update(tmp)
-    # return(getAllProps(data, T))
+    filename = "Data/"+substance+".json"
+    url_for('static', filename) 
+    filepath = "./Data/" + substance + ".json"
+    data = {}
+    with open(filepath) as json_file:
+        tmp = json.load(json_file)
+        data.update(tmp)
+    return(getAllProps(data, T))
 
 
 
