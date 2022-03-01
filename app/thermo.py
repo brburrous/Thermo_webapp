@@ -40,12 +40,13 @@ def linearInterpolate(x1, x2, y1, y2, x):
 
 
 def getThermoData(substance, T):
-    filepath = "./Data/" + substance + ".json"
-    data = {}
-    with open(filepath) as json_file:
-        tmp = json.load(json_file)
-        data.update(tmp)
-    return(getAllProps(data, T))
+    return "Hello world"
+    # filepath = "./Data/" + substance + ".json"
+    # data = {}
+    # with open(filepath) as json_file:
+    #     tmp = json.load(json_file)
+    #     data.update(tmp)
+    # return(getAllProps(data, T))
 
 
 
