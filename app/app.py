@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from .thermo import getThermoData
+from .thermo import *
  
 app = Flask(__name__)
  
