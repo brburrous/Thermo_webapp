@@ -19,6 +19,5 @@ def data():
     else:
         material = request.args.get('material')
         Temp = int(request.args.get('Temp'))
-    filepath = url_for('static', filename='Data/'+material.lower()+'.json')
-    data = getThermoData(filepath, Temp)
+    data = getThermoData(material, Temp)
     return data 
