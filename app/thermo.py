@@ -42,7 +42,7 @@ def linearInterpolate(x1, x2, y1, y2, x):
 
 def getThermoData(filepath, T):
     data = {}
-    print ("hello world") # python 3
+    print (os.getcwd()) # python 3
     sys.stdout.flush()
     with open(filepath) as json_file:
         tmp = json.load(json_file)
