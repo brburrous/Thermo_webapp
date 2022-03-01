@@ -3,7 +3,7 @@ function getData() {
     material = document.getElementById("material").value
     console.log(material)
     oldBody = document.getElementById("tableBody")
-    $.get("/data", { "Temp": Temp, "material": material }, function (data, textStatus, jqXHR) {
+    $.get("https://brians-flask.herokuapp.com/data", { "Temp": Temp, "material": material }, function (data, textStatus, jqXHR) {
         console.log(data)
         const keys = Object.keys(data)
         tableBody = document.createElement("tbody")
