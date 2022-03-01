@@ -5,7 +5,7 @@ app.config['SECRET_KEY'] = "jkljlkjlksjdaflkjsdf"
  
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
