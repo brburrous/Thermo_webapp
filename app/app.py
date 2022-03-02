@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for
-from thermo import *
+from .thermo import *
  
 app = Flask(__name__)
  
