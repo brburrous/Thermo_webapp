@@ -3,11 +3,11 @@ function getData() {
     material = document.getElementById("material").value
     console.log(material)
     oldBody = document.getElementById("tableBody")
-    $.get("https://brians-flask.herokuapp.com/data", { "Temp": Temp, "material": material }, function (data, textStatus, jqXHR) {
+    $.get("/data", { "Temp": Temp, "material": material }, function (data, textStatus, jqXHR) {
         console.log(data)
         const keys = Object.keys(data)
         tableBody = document.createElement("tbody")
-        tableBody.className = "bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700"
+        tableBody.className = "divide-y bg-gray-800 divide-gray-700"
         tableBody.id = "tableBody"
         keys.forEach((key, index) => {
             console.log(`${key}: ${data[key]}`);
@@ -25,7 +25,7 @@ function getData() {
 
 function addValue(value, power) {
     let data = document.createElement("td")
-    data.className = "py-4 px-6 text-sm font-medium text-gray-500 text-center whitespace-nowrap dark:text-white"
+    data.className = "py-4 px-6 text-sm font-medium text-center whitespace-nowrap text-white"
     data.append(value)
     if (power != 1) {
         exponent = document.createElement("sup")
@@ -38,9 +38,9 @@ function addValue(value, power) {
 
 function addRow(prop, value, power) {
     let row = document.createElement("tr")
-    row.className = "hover:bg-gray-100 dark:hover:bg-gray-700"
+    row.className = "hover:bg-gray-700"
     let d1 = document.createElement("td")
-    d1.className = "py-4 px-6 text-sm font-medium text-gray-900 text-center whitespace-nowrap dark:text-white"
+    d1.className = "py-4 px-6 text-sm font-medium text-center whitespace-nowrap text-white"
 
     let d2 = addValue(value, power)
 
@@ -48,7 +48,7 @@ function addRow(prop, value, power) {
     let d3 = document.createElement("td")
     d3.href = "#"
     d3.append("Copy")
-    d3.className = "py-4 px-6 text-sm font-medium text-right whitespace-nowrap text-blue-600 dark:text-blue-500 hover:underline"
+    d3.className = "py-4 px-6 text-sm font-medium text-right whitespace-nowrap text-blue-500 hover:underline"
 
 
     d1.append(prop)
@@ -85,3 +85,6 @@ function smartRound(num) {
     return ([smallNum, power])
 }
 
+$('form').submit(function (e) {
+    e.preventDefault();
+});
